@@ -1,5 +1,5 @@
 import pandas as pd
-from sklearn.linear_model import LogisticRegression
+from sklearn.ensemble import RandomForestClassifier
 import pickle
 import numpy as np
 
@@ -13,7 +13,7 @@ y = np.array([np.where(labels == x) for x in y]).flatten()
 # Modify the code to raise an error during testing
 try:
     # Fit the model using the correct data
-    model = LogisticRegression().fit(X, y)
+    model = RandomForestClassifier().fit(X, y)
 
     with open("model.pkl", 'wb') as f:
         pickle.dump(model, f)
